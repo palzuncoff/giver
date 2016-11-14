@@ -42,8 +42,9 @@ INSTALLED_APPS = {
     'gift',
     'partners',
     'photo_galery',
-    'partners',
+    'accounts'
     'order',
+    'django_facebook',
 
 }
 
@@ -71,6 +72,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_facebook.context_processors.facebook',
+                'django.core.context_processors.request',
             ],
         },
     },
@@ -139,3 +142,24 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Facebook setings
+
+FACEBOOK_APP_ID
+
+FACEBOOK_APP_SECRET
+
+AUTHENTICATION_BACKENDS = (
+    'django_facebook.auth_backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+
+AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
+
+
+
+
+
