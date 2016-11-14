@@ -8,6 +8,8 @@ from partners.models import Partner
 
 from django.db import models
 
+
+
 def get_image_path(instance, filename):
     return "category_logo/picture.jpg"
 
@@ -29,7 +31,7 @@ class Category(models.Model):
 
     def image_img(self):
         if self.gift_picture:
-            return u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.gift_picture.url)
+            return u'<a href="{0}" target="_blank"><img src="{0}" width="100"/></a>'.format(self.logo.url)
         else:
             return '(no picture)'
     image_img.short_description = 'Picture'
