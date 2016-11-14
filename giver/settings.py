@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = {
+INSTALLED_APPS =[
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,11 +42,10 @@ INSTALLED_APPS = {
     'gift',
     'partners',
     'photo_galery',
-    'accounts'
     'order',
     'django_facebook',
-
-}
+    'members',
+]
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -145,10 +144,11 @@ STATIC_URL = '/static/'
 
 
 # Facebook setings
-
+'''
 FACEBOOK_APP_ID
 
 FACEBOOK_APP_SECRET
+'''
 
 AUTHENTICATION_BACKENDS = (
     'django_facebook.auth_backends.FacebookBackend',

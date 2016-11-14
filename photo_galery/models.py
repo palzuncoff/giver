@@ -31,7 +31,7 @@ class GiftGalery(models.Model):
 
 
 class PartnerGalery(models.Model):
-    partner = models.ForeignKey(Partner, on_delete==models.CASCADE)
+    partner = models.ForeignKey(Partner, on_delete=models.CASCADE)
     partner_picture = models.ImageField(upload_to=get_image_path, null=True)
 
 

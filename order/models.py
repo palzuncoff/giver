@@ -6,10 +6,12 @@ from gift.models import Gift
 
 
 
+
+
 class Order(models.Model):
     gift = models.ForeignKey(Gift, on_delete=models.CASCADE)
-    accaunt = models.ForeignKey()
-    friend = models.ForeignKey()
+    #member = models.ForeignKey()
+    #friend = models.ForeignKey()
     is_surprise = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)
     is_taken = models.BooleanField(default=False)
