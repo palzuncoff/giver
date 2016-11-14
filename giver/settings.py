@@ -45,6 +45,7 @@ INSTALLED_APPS =[
     'order',
     'django_facebook',
     'members',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -142,6 +143,15 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    )
+}
+
 
 # Facebook setings
 '''
@@ -159,6 +169,11 @@ AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
 AUTH_PROFILE_MODULE = 'django_facebook.FacebookProfile'
 
+
+# use celery for storing friends and likes
+FACEBOOK_CELERY_STORE = True
+# use celery for extending tokens
+FACEBOOK_CELERY_TOKEN_EXTEND = True
 
 
 
