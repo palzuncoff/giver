@@ -10,8 +10,8 @@ from members.models import Member
 
 class Order(models.Model):
     gift = models.ForeignKey(Gift, on_delete=models.CASCADE)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    #friend = models.ForeignKey()
+    sender = models.ForeignKey(Member, on_delete=models.CASCADE)
+    #receiver = models.ForeignKey()
     is_surprise = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)
     is_taken = models.BooleanField(default=False)
