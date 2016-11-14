@@ -4,13 +4,13 @@ from django.db import models
 
 from gift.models import Gift
 
-
+from members.models import Member
 
 
 
 class Order(models.Model):
     gift = models.ForeignKey(Gift, on_delete=models.CASCADE)
-    #member = models.ForeignKey()
+    member = models.ForeignKey(Member, on_delete=models.CASCADE)
     #friend = models.ForeignKey()
     is_surprise = models.BooleanField(default=False)
     is_paid = models.BooleanField(default=False)

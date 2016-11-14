@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 
 try:
     # There can only be one custom user model defined at the same time
-    if getattr(settings, 'AUTH_USER_MODEL', None) == 'member.CustomFacebookUser':
+    if getattr(settings, 'AUTH_USER_MODEL', None) == 'members.CustomFacebookUser':
         from django.contrib.auth.models import AbstractUser, UserManager
         class CustomFacebookUser(AbstractUser, FacebookModel):
             '''
