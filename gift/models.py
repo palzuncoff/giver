@@ -9,8 +9,8 @@ class Gift(models.Model):
     partner= models.ForeignKey(Partner, on_delete=models.CASCADE)
     end_offer_date = models.DateField(auto_now=False, auto_now_add=False, blank=True)
     is_offer_avalabale = models.BooleanField()
-    is_delivery = models.BooleanField()
-    is_hot_offer = models.BooleanField()
+    is_delivery = models.BooleanField(default=False)
+    is_hot_offer = models.BooleanField(default=False)
 
 
 class NameDiscriptionCategory(models.Model):
@@ -24,4 +24,34 @@ class NameDiscriptionCategory(models.Model):
     category_en = models.CharField(max_length=50)
     category_ro = models.CharField(max_length=50)
     category_ru = models.CharField(max_length=50)
+
+
+    def __unicode__(self):
+        return self.name_en
+
+    def __unicode__(self):
+        return self.name_ro
+
+    def __unicode__(self):
+        return self.name_ru
+
+    def __unicode__(self):
+        return self.category_en
+
+    def __unicode__(self):
+        return self.category_ro
+
+    def __unicode__(self):
+        return self.category_ru
+
+    def __unicode__(self):
+        return self.description_en
+
+    def __unicode__(self):
+        return self.description_ro
+
+    def __unicode__(self):
+        return self.description_ru
+
+
 
